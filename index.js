@@ -12,20 +12,12 @@ if(process.env.NODE_ENV == 'development'){
   rejectUnauthorized = true
 }
 
-
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-  const cert = req.socket.getPeerCertificate()
-  console.log(cert.fingerprint)
-  console.log(cert)
-  if (!req.client.authorized) {
-    return res.status(401).send('Invalid client certificate authentication.');
-  }
-
-  return res.send('Hello, world!');
-});
+app.use(require('./routes'));
 
 https
   .createServer(

@@ -7,23 +7,33 @@ if(process.env.NODE_ENV == 'development'){
 }
 
 try{
+  const post_data = JSON.stringify({
+    dna_id: '3600f620305aa7bc5355fdc85d9e6619a68d1ea5'
+  })
+
   const req = https.request(
     {
       hostname: 'localhost',
       port: 9443,
-      path: '/',
-      method: 'GET',
+      path: '/request-dna-key',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': post_data.length
+      },
       cert: fs.readFileSync('wallet/client.crt'),
       key: fs.readFileSync('wallet/client.key'),
-      ca: fs.readFileSync('wallet/ca.crt')
+      ca: fs.readFileSync('wallet/ca.crt'), 
     },
     res => {
       res.on('data', function(data) {
-        console.log("cheguei!!! " + data)
+        console.log(data.toString())
       });
     }
-    )
-    req.end();
-}catch(er){
-  console.log("erro é")
+  )
+
+  req.write(post_data);
+  req.end();
+}catch(e){
+  console.log("erro é" + e)
 }
