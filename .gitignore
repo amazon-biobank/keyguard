@@ -1,0 +1,6 @@
+node_modules/
+wallet/*
+!wallet/parser.js 
+!wallet/parse-certificates.sh
+.env
+package-lock.json
