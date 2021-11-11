@@ -1,7 +1,11 @@
 const fs = require('fs');
 const https = require('https');
 
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+
+if(process.env.NODE_ENV == 'development'){
+  process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+}
+
 try{
   const req = https.request(
     {

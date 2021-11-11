@@ -2,7 +2,16 @@ const fs = require('fs');
 const https = require('https');
 const express = require('express');
 
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+console.log(process.env.NODE_ENV)
+
+let rejectUnauthorized
+if(process.env.NODE_ENV == 'development'){
+  process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+  rejectUnauthorized = false
+} else{
+  rejectUnauthorized = true
+}
+
 
 const app = express();
 
@@ -22,7 +31,7 @@ https
   .createServer(
     {
       requestCert: true,
-      rejectUnauthorized: false,
+      rejectUnauthorized,
       ca: fs.readFileSync('wallet/ca.crt'),
       cert: fs.readFileSync('wallet/server.crt'),
       key: fs.readFileSync('wallet/server.key'),
