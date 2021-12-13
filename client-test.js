@@ -8,7 +8,7 @@ if(process.env.NODE_ENV == 'development'){
 
 try{
   const post_data = JSON.stringify({
-    dna_id: '3600f620305aa7bc5355fdc85d9e6619a68d1ea5'
+    dna_id: '125'
   })
 
   const req = https.request(
