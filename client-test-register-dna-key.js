@@ -8,14 +8,15 @@ if(process.env.NODE_ENV == 'development'){
 
 try{
   const post_data = JSON.stringify({
-    dna_id: '125'
+    dnaId: '125',
+    secretKey: 'secretKey125'
   })
 
   const req = https.request(
     {
       hostname: 'localhost',
       port: 9443,
-      path: '/request-dna-key',
+      path: '/register-dna-key',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

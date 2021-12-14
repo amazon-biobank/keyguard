@@ -18,7 +18,8 @@ class DnaKey {
   }
 
   static async createDnaKey(dnaKey){
-
+    this.dnaKeyCollection.push(dnaKey)
+    return dnaKey
   }
   
 }
