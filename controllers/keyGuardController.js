@@ -1,5 +1,5 @@
 const { response } = require('express');
-const DnaKey = require('./../model/dnaKey')
+const DnaKeyDao = require('./../model/dnaKeyDao')
 const Util = require('./controllerUtil')
 
 exports.readDnaKey = async function(req, res, next){
@@ -9,7 +9,7 @@ exports.readDnaKey = async function(req, res, next){
   
   const userAddress = Util.getUserAddress(req)
   const data = await Util.getDataFromBlockchain(req.query.dnaId)
-  const dnaKey = await DnaKey.readDnaKeyById(req.query.dnaId)
+  const dnaKey = await DnaKeyDao.readDnaKeyById(req.query.dnaId)
 
   if(data==undefined){
     return res.status(401).send('Data does not exists');
@@ -41,7 +41,7 @@ exports.registerDnaKey = async function(req, res, next){
   if( !Util.isDataOwner(data, userAddress) ){
     return res.status(401).send("User is not Data Owner")
   } else {
-    await DnaKey.createDnaKey(dnaKey)
+    await DnaKeyDao.createDnaKey(dnaKey)
     return res.send("DnaKey: " + dnaKey.dnaId + " was registered")
   }
 }

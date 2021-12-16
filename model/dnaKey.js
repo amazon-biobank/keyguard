@@ -1,28 +1,25 @@
-const { Gateway, Wallets } = require('fabric-network');
-const path = require('path');
-const fs = require('fs')
+const { Sequelize, Model, DataTypes } = require("sequelize");
+require('dotenv').config()
 
-var dnaKeyCollection = [ { dnaId: '123', secretKey: 'mysecretKey123'}, 
-                          { dnaId: '124', secretKey: 'mysecretKey124'},
-                          { dnaId: '125', secretKey: 'mysecretKey125'},
-                          { dnaId: 'aa600f620305aa7bc5355fdc85d9e6619a681ea5', secretKey: 'mysecretKeyaaa'}]
+const sequelize = new Sequelize(
+  process.env.DB_DATABASE_NAME,
+  process.env.DB_USERNAME, 
+  process.env.DB_PASSWORD, 
+  {dialect: 'mysql', host: 'localhost'}
+);
 
-class DnaKey {
-                              
-    
-  
-  static async readDnaKeyById(dnaId) {
-    const dnaKey = dnaKeyCollection.find( dnaKey => {
-      return dnaKey.dnaId == dnaId
-    })
-    return dnaKey
-  }
+class DnaKey extends Model {}
 
-  static async createDnaKey(dnaKey){
-    dnaKeyCollection.push(dnaKey)
-    return dnaKey
-  }
-  
-}
+DnaKey.init({
+  dnaId: DataTypes.TEXT,
+  secretKey: DataTypes.TEXT
+}, {
+  sequelize, 
+  modelName: 'dnaKey' 
+});
+
+(async () => {
+  await sequelize.sync();
+})();
 
 module.exports = DnaKey;
