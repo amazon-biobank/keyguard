@@ -4,3 +4,4 @@ wallet/*
 !wallet/parse-certificates.sh
 .env
 package-lock.json
+blockchain/fabric-details/connection.json
