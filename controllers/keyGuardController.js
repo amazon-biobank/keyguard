@@ -12,7 +12,7 @@ exports.readDnaKey = async function(req, res, next){
   const dnaKey = await DnaKeyDao.readDnaKeyById(req.query.dnaId)
 
   if(data==undefined){
-    return res.status(401).send('Data does not exists');
+    return res.status(401).send('Data does not exist');
   } 
   else if(dnaKey == undefined){
     return res.status(401).send('Dna key not registered in the system')

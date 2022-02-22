@@ -7,7 +7,7 @@ if(process.env.NODE_ENV == 'development'){
 }
 
 try{
-  const params = 'dnaId=125'
+  const params = 'dnaId=aad600f620305aa7bc5355fdc85d9e6619a681ea'
   const path = '/read-dna-key?' + params
 
   const req = https.request(
