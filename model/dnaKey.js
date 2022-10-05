@@ -19,7 +19,12 @@ DnaKey.init({
 });
 
 (async () => {
-  await sequelize.sync();
+  try{
+    await sequelize.sync();
+  }
+  catch(e){
+    console.log(e)
+  }
 })();
 
 module.exports = DnaKey;

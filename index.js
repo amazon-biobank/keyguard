@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 const express = require('express');
-
+require('dotenv').config()
 console.log(process.env.NODE_ENV)
 
 let rejectUnauthorized

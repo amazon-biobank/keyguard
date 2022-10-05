@@ -15,7 +15,6 @@ class ConnectService {
       this.connectionProfilePath = path.resolve(__dirname, '..', 'fabric-details', 'connection.json');
       this.asLocalhost = false
     }
-    
   }
   
   async connectNetwork(channel, chaincode) {
