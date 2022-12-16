@@ -1,5 +1,5 @@
 {
-    "name": "test-network-org1",
+    "name": "first-network-org1",
     "version": "1.0.0",
     "client": {
         "organization": "Org1",
@@ -15,31 +15,31 @@
         "Org1": {
             "mspid": "Org1MSP",
             "peers": [
-                "peer0.org1.example.com"
+                "peer0.org1.amazonbiobank.mooo.com"
             ],
             "certificateAuthorities": [
-                "ca.org1.example.com"
+                "ca.org1.amazonbiobank.mooo.com"
             ]
         }
     },
     "peers": {
-        "peer0.org1.example.com": {
-            "url": "grpcs://localhost:7051",
+        "peer0.org1.amazonbiobank.mooo.com": {
+            "url": "grpcs://peer0.org1.amazonbiobank.mooo.com:11751",
             "tlsCACerts": {
-                "pem": "-----BEGIN CERTIFICATE-----\nMIICFjCCAb2gAwIBAgIUP4QqBLlsqUa8yriEUQfwVlcKFM8wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIyMTAwNTE1MTcwMFoXDTM3MTAwMTE1MTcwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQCQe8xbxnidGxXmQXtBvdoyp\nbxUIMNY6S0VPbEOBCvGeYyGX5XUf233BXOvNaJeYKZ7t0H8RB2xxvsfQ2Fcg6KNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFJVyd0bzlYajyUV//6RmlPHR63doMAoGCCqGSM49BAMCA0cAMEQCIDVwcEL7wNEo\nT5MIVSQZ5n90i8A6vI4nb/7wFa/j3FvDAiAT0nJskdnujfvMTqqm9+VRStHUlyHF\nQJ2DWuKGb8ujZg==\n-----END CERTIFICATE-----\n"
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICFjCCAb2gAwIBAgIUHSsvXXf107sfXoYLbzP4Je508s0wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIyMTIxNjE0MzEwMFoXDTM3MTIxMjE0MzEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7arWiwGgS6Tz5fjd5mZ7CQwd\nvumxWhibC15gqJMAdmoTImqbnV9T221DKQwKJfkVcS7zWnlh+39B1I2V+8r3a6NF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFN0qGcZJegAGYG5BNb2AbuyOmjtSMAoGCCqGSM49BAMCA0cAMEQCIAqRivXOFZyd\nxQVZXDXMgj1dv9j/VHj/ucIFX/aNfTyHAiBOBkDBh99OqmQ+hilpMmPSfD1H3LkC\nrtDaVMLBRI2C/A==\n-----END CERTIFICATE-----\n"
             },
             "grpcOptions": {
-                "ssl-target-name-override": "peer0.org1.example.com",
-                "hostnameOverride": "peer0.org1.example.com"
+                "ssl-target-name-override": "peer0.org1.amazonbiobank.mooo.com",
+                "hostnameOverride": "peer0.org1.amazonbiobank.mooo.com"
             }
         }
     },
     "certificateAuthorities": {
-        "ca.org1.example.com": {
-            "url": "https://localhost:7054",
-            "caName": "ca-org1",
+        "ca.org1.amazonbiobank.mooo.com": {
+            "url": "https://ca.org1.amazonbiobank.mooo.com:7054",
+            "caName": "ca.org1.amazonbiobank.mooo.com",
             "tlsCACerts": {
-                "pem": ["-----BEGIN CERTIFICATE-----\nMIICFjCCAb2gAwIBAgIUP4QqBLlsqUa8yriEUQfwVlcKFM8wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIyMTAwNTE1MTcwMFoXDTM3MTAwMTE1MTcwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQCQe8xbxnidGxXmQXtBvdoyp\nbxUIMNY6S0VPbEOBCvGeYyGX5XUf233BXOvNaJeYKZ7t0H8RB2xxvsfQ2Fcg6KNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFJVyd0bzlYajyUV//6RmlPHR63doMAoGCCqGSM49BAMCA0cAMEQCIDVwcEL7wNEo\nT5MIVSQZ5n90i8A6vI4nb/7wFa/j3FvDAiAT0nJskdnujfvMTqqm9+VRStHUlyHF\nQJ2DWuKGb8ujZg==\n-----END CERTIFICATE-----\n"]
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICFjCCAb2gAwIBAgIUHSsvXXf107sfXoYLbzP4Je508s0wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIyMTIxNjE0MzEwMFoXDTM3MTIxMjE0MzEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7arWiwGgS6Tz5fjd5mZ7CQwd\nvumxWhibC15gqJMAdmoTImqbnV9T221DKQwKJfkVcS7zWnlh+39B1I2V+8r3a6NF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFN0qGcZJegAGYG5BNb2AbuyOmjtSMAoGCCqGSM49BAMCA0cAMEQCIAqRivXOFZyd\nxQVZXDXMgj1dv9j/VHj/ucIFX/aNfTyHAiBOBkDBh99OqmQ+hilpMmPSfD1H3LkC\nrtDaVMLBRI2C/A==\n-----END CERTIFICATE-----\n"
             },
             "httpOptions": {
                 "verify": false
