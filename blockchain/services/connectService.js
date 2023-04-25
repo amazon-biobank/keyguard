@@ -14,6 +14,9 @@ class ConnectService {
     else if(process.env.CONTEXT=='remote'){
       this.connectionProfilePath = path.resolve(__dirname, '..', 'fabric-details', 'connection.json');
       this.asLocalhost = false
+    }else if(process.env.CONTEXT=='localhost'){
+      this.connectionProfilePath = path.resolve(__dirname, '..', '..','..','biobank', 'blockchain/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.json');
+      this.asLocalhost = true
     }
   }
   

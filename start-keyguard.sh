@@ -1,14 +1,14 @@
 if [ $1 = "remote" ] 
 then 
   echo "Deploying keyguard server"
-  # CONNECTION_PROFILE="./../biobank/blockchain/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.json"
-  CONNECTION_PROFILE="./../fabric-multihost/setup3/machines/vm1/api-2.0/config/connection-org1.json"
+  CONNECTION_PROFILE="./../biobank/blockchain/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.json"
+  # CONNECTION_PROFILE="./../fabric-multihost/setup3/machines/vm1/api-2.0/config/connection-org1.json"
   CONTEXT="remote"
 
   # generate and copy keyguard Certificates
   cd ../biobank/application/fabric-details/
-  node registerUser.js client1 remote
-  node registerUser.js keyguard1 remote
+  node registerUser.js client remote
+  node registerUser.js keyguard remote
   mv wallet/client.id ./../../../keyguard/wallet
   mv wallet/keyguard.id  ./../../../keyguard/wallet
   cd -
@@ -17,11 +17,11 @@ then
   cd wallet
   ./parse-certificates.sh
   cd ..
-  # cp ./../biobank/blockchain/test-network/organizations/fabric-ca/org1/ca-cert.pem ./wallet/ca.crt
-  cp ./../fabric-multihost/setup3/machines/vm1/create-certificate-with-ca/fabric-ca/org1/ca-cert.pem ./wallet/ca.crt
+  cp ./../biobank/blockchain/test-network/organizations/fabric-ca/org1/ca-cert.pem ./wallet/ca.crt
+  # cp ./../fabric-multihost/setup3/machines/vm1/create-certificate-with-ca/fabric-ca/org1/ca-cert.pem ./wallet/ca.crt
   
   # copy connection profile
-  cp ./../fabric-multihost/setup3/machines/vm1/api-2.0/config/connection-org1.json ./blockchain/fabric-details/connection.json
+  # cp ./../fabric-multihost/setup3/machines/vm1/api-2.0/config/connection-org1.json ./blockchain/fabric-details/connection.json
   
   # Start Application
   node index.js &
